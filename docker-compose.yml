@@ -1,0 +1,21 @@
+services:
+ database:
+  image: postgres:17
+  container_name: s6-postgres
+
+  environment:
+   POSTGRES_USER: s6NCOIC
+   POSTGRES_PASSWORD: s6password
+   POSTGRES_DB: s6_battle_board
+
+  ports:
+   - "5432:5432"
+
+  volumes:
+   - postgres_data:/var/lib/postgresql/data
+
+volumes:
+ postgres_data:
+
+
+  
