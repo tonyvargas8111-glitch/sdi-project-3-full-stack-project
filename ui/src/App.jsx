@@ -2,8 +2,8 @@ import { useEffect, useState } from "react";
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import Personnel from "./personnel";
 import Equipment from "./equipment";
-// import EquipmentSignedOuts from "./equipment_signed_out";
-// import Maintenance from "./maintenance";
+import EquipmentSignedOut from "./equipment_signed_out";
+import Maintenance from "./maintenance";
 
 
 function App() {
@@ -140,8 +140,12 @@ function App() {
         <Routes>
           <Route path="/personnel" element={<Personnel personnel={personnel} />} />
           <Route path="/equipment" element={<Equipment equipment={equipment} />} />
-          {/* <Route path="/equipment_signed_out" element={<EquipmentSignedOut equipment_signed_out={equipment_signed_out} />} />
-          <Route path="/maintenance" element={<Maintenance maintenance={maintenance} />} /> */}
+          <Route path="/equipment_signed_out" element={<EquipmentSignedOut equipment_signed_out={equipment_signed_out}
+                 personnel={personnel}
+                 equipment={equipment} />} />
+          <Route path="/maintenance" element={<Maintenance maintenance_tickets={maintenance_tickets}
+                 equipment={equipment}
+                 personnel={personnel} />} />
         <Route path="/" element={
           <>
 
